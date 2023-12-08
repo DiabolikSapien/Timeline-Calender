@@ -1,0 +1,155 @@
+/* App.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+
+.App > div:first-child {
+  width: 7%;
+}
+
+.App > div:last-child {
+  width: 93%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.second-navbar {
+  background-color: #ffffff; 
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.navbar-element,
+.second-navbar-element {
+  padding: 0 10px; 
+}
+
+.vertical-sections {
+  display: flex;
+  height: calc(100% - 40px);
+  flex-direction: row;
+}
+
+.left-section {
+  width: 5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; 
+}
+
+.left-section .top,
+.left-section .middle,
+.left-section .bottom {
+  margin: 0; 
+}
+
+.middle-section {
+  width: 20%;
+  padding: 20px; 
+  box-sizing: border-box;
+  text-align: left;
+  border: 1px solid #ccc; 
+}
+
+.right-section {
+  width: 82%; 
+  box-sizing: border-box;
+  border: 1px solid #ccc; 
+  display:flex;
+  flex-direction: column;
+  text-align: left; 
+}
+
+.main-area {
+  padding: 10px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.popup {
+  position: fixed;
+  top: 60px; /* Adjust the top position according to your design */
+  right: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.popup .navbar-element {
+  margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navbar-element,
+  .second-navbar-element {
+    display: none;
+  }
+
+  .popup {
+    display: flex; /* Change from 'none' to 'flex' to show the popup */
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .popup .navbar-element,
+  .popup .second-navbar-element {
+    display: inline-block; /* Apply the styles to elements inside the popup */
+  }
+
+  .navbar.collapsed .center-element {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .navbar-toggle {
+    display: none;
+  }
+
+  .popup {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+  
+}
